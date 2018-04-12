@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root {
+  --ld_primary: #47c4d3;
+  --ld_accent: #000;
+}
+
+
+*{
+    margin : 0;
+    padding : 0;
+}
+
+/* Remove bootstrap focus outline */
+*:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+body,html {
+    width : 100%;
+    height : 100%;
+}
+
+.ld_bg_primary {
+    color: white;
+    background-color: var(--ld_primary);
+}
+
+.ld_bg_accent {
+    color: white;
+    background-color: var(--ld_accent);
+}
+
+.ld_text_primary {
+    color: var(--ld_primary)
+}
+
+.ld_text_accent {
+    color: var(--ld_accent)
+}
+
+/* Remove padding of Angular Material dialog */
+.noPaddingModal .mat-dialog-container {
+  padding: 0;
+}
