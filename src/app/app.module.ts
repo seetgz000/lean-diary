@@ -35,7 +35,6 @@ import { AppRoutingModule } from './app-routing.module'
     CdkTableModule,
     MatDialogModule
   ],
-  declarations: [UserProfileComponent]
 })
 export class MaterialModule {}
 
@@ -52,7 +51,9 @@ export class MaterialModule {}
     HomeComponent,
     FoodDetailComponent,
     UserDetailComponent,
-    FoodGalleryComponent
+    FoodGalleryComponent,
+    UserProfileComponent
+    
   ],
   entryComponents: [FoodSearchComponent,
   FoodSearchComponentModal,UserRegisterComponent, UserRegisterComponentModal],
