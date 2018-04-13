@@ -11,7 +11,12 @@ export class HomeComponent implements OnInit {
    constructor(public dialog: MatDialog){}
 
    openSearchModal() {
-     const dialogRef = this.dialog.open(FoodSearchComponentModal);
+     const dialogRef = this.dialog.open(FoodSearchComponentModal, {
+         autoFocus: false,
+         id: 'foodSearchModal',
+         panelClass: 'noPaddingModal',
+         maxWidth: '800px'
+     });
 
      dialogRef.afterClosed().subscribe(result => {
        console.log(`Dialog result: ${result}`);

@@ -43,5 +43,6 @@ export class FoodSearchComponent implements OnInit {
 @Component({
   selector: 'app-food-search-modal',
   templateUrl: './food-search-modal.html',
+  styleUrls: ['./food-search.component.css']
 })
 export class FoodSearchComponentModal {}

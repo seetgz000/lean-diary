@@ -1,17 +1,19 @@
 .topTitleContainer {
-  width: 100%;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .topTitle {
-  text-decoration:none; 
-  color:#000;
   display: inline-block;
   flex: 1;
+}
+
+.topTitle a {
+  text-decoration:none;
+  color:#000;
 }
 
 .topProfilePic {
