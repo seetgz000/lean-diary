@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
          autoFocus: false,
          id: 'foodSearchModal',
          panelClass: 'noPaddingModal',
-         maxWidth: '800px'
+         maxWidth: '75vw'
      });
 
      dialogRef.afterClosed().subscribe(result => {
@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+    setTimeout(() => this.openSearchModal(), 0);
   }
 
 }

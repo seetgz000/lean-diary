@@ -23,7 +23,7 @@ export class UserRegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    setTimeout(() => this.openDialog(), 0);
+    // setTimeout(() => this.openDialog(), 0);
   }
 
 }

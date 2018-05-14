@@ -7,35 +7,55 @@
       <button class="btn ld_bg_accent mt-5">Connect to Instagram</button>
     </div>
     <div class="col-md-4 mt-5 mt-md-0">
-      <div class="row">
+      <div class="row"><button type="button" (click)="showEdit()" class="btn ml-auto"><i class="fas fa-edit"></i>Edit</button>
         <div class="col-12">
           <label>Name</label>
-          <div class="profileDetailBox">your name</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.name }}</div>
+          <input type="text" class="profileDetailInput" *ngIf="editProfile" [(ngModel)]="user.name">
         </div>
         <div class="col-6">
           <label>Age</label>
-          <div class="profileDetailBox">your age</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.age }}</div>
+          <input type="number" class="profileDetailInput" *ngIf="editProfile" [(ngModel)]="user.age">
         </div>
         <div class="col-6">
           <label>Gender</label>
-          <div class="profileDetailBox">your gender</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.gender }}</div>
+          <select class="profileDetailInput" *ngIf="editProfile" [(ngModel)]="user.gender">
+            <option value="Male" name="Male">Male</option>
+            <option value="Female" name="Female">Female</option>
+          </select>
         </div>
         <div class="col-6">
           <label>Weight(kg)</label>
-          <div class="profileDetailBox">your weight</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.weight }}</div>
+          <input type="number" class="profileDetailInput" *ngIf="editProfile" step=".01" [(ngModel)]="user.weight">
         </div>
         <div class="col-6">
           <label>Height(cm)</label>
-          <div class="profileDetailBox">your height</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.height }}</div>
+          <input type="number" class="profileDetailInput" *ngIf="editProfile" step=".01" [(ngModel)]="user.height">
         </div>
         <div class="col-6">
-          <label>Age</label>
-          <div class="profileDetailBox">your age</div>
+          <label>Meal per day</label>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.mealPerDay }}</div>
+          <input type="number" class="profileDetailInput" *ngIf="editProfile" [(ngModel)]="user.mealPerDay">
+        </div>
+        <div class="col-6">
+          <label>Target (kg)</label>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.targetWeight }}</div>
+          <input type="number" class="profileDetailInput" *ngIf="editProfile" step=".01" [(ngModel)]="user.targetWeight">
         </div>
         <div class="col-12">
           <label>Activity Level</label>
-          <div class="profileDetailBox">your activity level</div>
+          <div class="profileDetailBox" *ngIf="!editProfile">{{ user.activityLevel }}</div>
+          <select class="profileDetailInput" *ngIf="editProfile" [(ngModel)]="user.activityLevel">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
         </div>
+        <button class="btn ld_bg_primary ml-auto mt-3" (click)="saveEdit()" *ngIf="editProfile">Save</button>
       </div>
     </div>
 

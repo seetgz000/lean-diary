@@ -35,6 +35,16 @@
   text-align: center;
 }
 
+.profileDetailInput {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: none;
+  border-radius: .25rem;
+}
+
 .connectInsta {
   padding: 10px 20px;
   width: 100%;

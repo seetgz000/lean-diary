@@ -7,3 +7,14 @@
 .registerModalContent {
   padding: 10px 15px;
 }
+
+.btnInstaLogin {
+  color: #fff;
+  background-color: var(--ld_accent);
+  margin-top: .25rem!important;
+  width: 100%!important;
+}
+
+.btnInstaLogin {
+  color: #fff;
+}

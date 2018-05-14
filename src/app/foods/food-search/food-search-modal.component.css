@@ -1,0 +1,130 @@
+.searchModalHeading {
+    padding: 20px 0 20px 20px;
+    border-bottom:1px solid grey;
+  
+}
+
+.quickSearch_title {
+    font-size: 1.2rem;
+    margin-top: 5%;
+}
+  
+.btnQuickSearch {
+    width: 90%;
+    color: #fff!important;
+    background-color: var(--ld_primary);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: .25rem;
+    margin: 10px 0;
+    padding: 5px 0;
+}
+
+.btn_gender {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 0;
+    margin-right: .75rem;
+    width: 45%;
+    padding: 4% 0;
+    text-align: center;
+}
+
+.search_form_subtitle {
+    font-size: 1.5rem;
+}
+
+.btn_gender .btn_gender_input, .btn_gender .btn_gender_label {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.btn_gender .btn_gender_input {
+    opacity: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+.btn_gender .btn_gender_label {
+    color: #7b7b7b!important;
+    background-color: inherit;
+    border: 1px solid rgba(123, 123, 123, 0.4);
+    width: 100%;
+    cursor:pointer;
+    z-index:90;
+    height: 100%;
+    padding: 4% 0;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+.btn_gender_input[type="radio"]:checked+.btn_gender_label{
+    color: #fff!important;
+    background-color: var(--ld_primary);
+    border: 1px solid transparent;
+}
+
+.smallInput {
+    display: inline-block;
+    width: 50%;
+    border: 1px solid #7b7b7b;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    margin-right: 3%;
+}
+
+.kgLabel {
+    border: 1px solid #7b7b7b;
+    padding: 9px 20px 9px 6px;
+    border-radius: .25rem;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+.cmLabel {
+    border: 1px solid #7b7b7b;
+    padding: 9px 20px 9px 6px;
+    border-radius: .25rem;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+}
+
+
+.form-control {
+    border-color: #7b7b7b;
+}
+
+.btmSubmit {
+    color: #fff!important;
+    background-color: var(--ld_primary);
+    border-color: transparent;
+    font-size: 1.2rem;
+    padding: 2%;
+}
+
+.search_modal_footer {
+    color: #fff;
+    background-color: #d0d0d0;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 1rem 1rem 2rem 1rem;
+}
+
+.search_modal_footer p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}

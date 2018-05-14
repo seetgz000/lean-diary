@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-
-
   images;
+  editProfile: boolean;
+
+  user: User = {
+    id: 1,
+    name: 'Your Name',
+    age: 1,
+    gender: 'MALE',
+    weight: 1,
+    height: 1,
+    mealPerDay: 3,
+    targetWeight: 1,
+    activityLevel: 'Medium'
+  };
 
   constructor() {
+
     this.images = [
    	{"url":"../../assets/images/food-list/food1.png"},
    	{"url":"../../assets/images/food-list/food2.png"},
@@ -34,8 +47,18 @@ export class UserProfileComponent implements OnInit {
    	{"url":"../../assets/images/food-list/food19.png"},
    	{"url":"../../assets/images/food-list/food20.jpg"},
     ];
+
+      this.editProfile = false;
   }
-  
+
   ngOnInit() {
   }
+
+  showEdit(){
+    this.editProfile = true;
+  }
+  saveEdit(){
+    this.editProfile = false;
+  }
+
 }
