@@ -13,8 +13,13 @@
   background-color: var(--ld_accent);
   margin-top: .25rem!important;
   width: 100%!important;
+  cursor: pointer;
 }
 
-.btnInstaLogin {
-  color: #fff;
+.btnLogin {
+  color: #000;
+  cursor: pointer;
+}
+.btnLogin:hover p{
+  color:rgb(87, 87, 87);
 }
