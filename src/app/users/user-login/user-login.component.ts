@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material';
+
+import { UserRegisterComponent,UserRegisterComponentModal } from '../user-register/user-register.component';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-login',
@@ -8,10 +10,17 @@ import {MatDialog} from '@angular/material';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private userService: UserService) {}
 
+  openLoginDialog = new this.userService.openDialog( UserLoginComponentModal, "userLoginModal" );
 
   ngOnInit() {
-
+    setTimeout(() => this.openLoginDialog(), 0);
   }
 }
+@Component({
+  selector: 'app-user-login-modal',
+  templateUrl: './user-login-modal.html',
+  styleUrls: ['./user-login.component.css']
+})
+export class UserLoginComponentModal {}

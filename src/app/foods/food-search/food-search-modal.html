@@ -1,10 +1,12 @@
 <div class="searchModalHeading">
-  <div class="row">
-    <div class="col-3">
-      <h2>Hi visitor</h2>
-    </div>
-    <div class="col-9">
-      <span>Knowing your body type is important, find the food thats suitable for you by entering the following information</span>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <h2>Hi visitor!</h2>
+      </div>
+      <div class="col-9">
+        <span>Knowing your body type is important, find the food thats suitable for you by entering the following information</span>
+      </div>
     </div>
   </div>
 </div>
@@ -12,56 +14,58 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-3 border-right">
-      <h3>Quick Search</h3>
+      <h3 class="quickSearch_title">Quick Search</h3>
       <a class="btnQuickSearch">Breakfast</a>
       <a class="btnQuickSearch">Lunch</a>
       <a class="btnQuickSearch">Low carbs</a>
     </div>
     <div class="col-9">
-      <form>
-        <div class="form-group">
-          <label >Gender</label>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="maleRadio" value="male">
-            <label class="form-check-label">Male</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio"name="femaleRadio" value="female">
-            <label class="form-check-label">Female</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="activityLevel">Activity Level</label>
-          <select id="searchActivityLevel" class="form-control">
-            <option>Choose your activity level</option>
-            <option>Low</option>
-            <option>Medium</option>
-            <option>High</option>
-          </select>
-        </div>
-        <div class="form group">
-          <div class="row">
-            <div class="col-6">
-              <label>Weight</label>
-              <input type="number">
-              <label>kg</label>
+      <div class="container py-3">
+        <form>
+          <div class="form-group">
+            <h3 class="search_form_subtitle">Gender</h3>
+            <div class="btn_gender">
+              <input class="btn_gender_input" type="radio" name="genderRadio" value="male">
+              <label class="btn_gender_label">Male</label>
             </div>
-            <div class="col-6">
-              <label>Height</label>
-              <input type="number">
-              <label>cm</label>
-            </div>
-            <div class="col-6">
-              <label>Target Weight</label>
-              <input type="number">
-              <label>kg</label>
+            <div class="btn_gender">
+              <input class="btn_gender_input" type="radio"name="genderRadio" value="female">
+              <label class="btn_gender_label">Female</label>
             </div>
           </div>
-        </div>
-
-        <button type="submit" class="form-control" mat-raised-button color="primary">Search Now</button>
-      </form>
-      <div>
+          <div class="form-group">
+            <h3 class="search_form_subtitle">Activity Level</h3>
+            <select id="searchActivityLevel" class="form-control">
+              <option>Choose your activity level</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+          <div class="form group">
+            <div class="row">
+              <div class="col-6">
+                <h3 class="search_form_subtitle">Weight</h3>
+                <input type="number" class="form-control smallInput">
+                <label class="kgLabel">kg</label>
+              </div>
+              <div class="col-6">
+                <h3 class="search_form_subtitle">Height</h3>
+                <input type="number" class="form-control smallInput">
+                <label class="cmLabel">cm</label>
+              </div>
+              <div class="col-6">
+                <h3 class="search_form_subtitle">Target Weight</h3>
+                <input type="number" class="form-control smallInput">
+                <label class="kgLabel">kg</label>
+              </div>
+            </div>
+          </div>
+  
+          <button type="submit" class="form-control btmSubmit" mat-raised-button color="primary">Search Now</button>
+        </form>
+      </div>
+      <div class="search_modal_footer">
         <h4>What is this?</h4>
         <p>Our search tool will help you see what people <br/>
           of your target weight is eating</p>

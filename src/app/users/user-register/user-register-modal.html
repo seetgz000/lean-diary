@@ -19,9 +19,9 @@
 
 
     <button type="submit" class="btn ld_bg_primary mt-1 w-100">Join</button>
-    <button type="submit" class="btn ld_bg_accent mt-1 w-100">Login With Instagram</button>
+    <a href="https://api.instagram.com/oauth/authorize/?client_id=46c42afd63d84b0ab851e1f736d21b4c&redirect_uri=http://localhost:4200/&response_type=token" class="btn btnInstaLogin">Login With Instagram</a>
   </form>
 </div>
 <div class="text-center py-1">
-  <p>I am already registered. Take me to <a>login</a></p>
+  <a class="btnLogin" (click)="switchLoginDialog()"><p>I am already registered. Take me to login</p></a>
 </div>
