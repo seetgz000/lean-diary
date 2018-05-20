@@ -3,7 +3,7 @@ import {MatDialog} from '@angular/material';
 
 import { UserService } from '../../user.service';
 
-import { UserLoginComponent,UserLoginComponentModal } from '../user-login/user-login.component';
+// import { UserLoginComponent,UserLoginComponentModal } from '../user-login/user-login.component';
 
 
 @Component({
@@ -20,23 +20,19 @@ export class UserRegisterComponent implements OnInit {
   openRegisterDialog() {
     const dialogRef = this.dialog.open(UserRegisterComponentModal, {
         autoFocus: false,
-        id: 'userRegisterModal',
-        panelClass: 'noPaddingModal' 
+        panelClass: 'noPaddingModal'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-    });    
+    });  
+    
   }
+      
 
-  // closeRegisterDialog() {
-  //   const dialogRef = this.dialog.(UserRegisterComponentModal);
-  // }
-
-  // private switchLoginDialog = this.loginDialog .openLoginDialog();
 
   ngOnInit() {
-    // setTimeout(() => this.openRegisterDialog(), 0);
+    setTimeout(() => this.openRegisterDialog(), 0);
   }
 
 }
@@ -45,4 +41,33 @@ export class UserRegisterComponent implements OnInit {
   templateUrl: './user-register-modal.html',
   styleUrls: ['./user-register.component.css']
 })
-export class UserRegisterComponentModal {}
+export class UserRegisterComponentModal {
+
+  constructor(public dialog: MatDialog){}
+
+  // switchLoginDialog() {
+  //   this.dialog.closeAll();
+
+  //   const dialogRef = this.dialog.open(UserLoginComponentModal, {
+  //     autoFocus: false,
+  //     id: 'userLoginModal',
+  //     panelClass: 'noPaddingModal' 
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log(`Dialog result: ${result}`);
+  //   });    
+  // }
+  
+
+  modalType: string;
+
+  changeModal(ModalType: string){
+    
+    this.modalType = ModalType;
+  }
+
+  ngOnInit() {
+    this.modalType = "register";
+  }
+}

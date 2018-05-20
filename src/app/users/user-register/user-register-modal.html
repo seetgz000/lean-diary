@@ -1,27 +1,55 @@
-<div class="registerModalHeading">
-  <h5>Be part of the community</h5>
-  <p>LeanDiary hopes you can be part of our family and be an inspiration to others trying to achieve their goals</p>
+<div *ngIf="this.modalType === 'register'" id="userRegisterModal" class="noPaddingModal">
+  <div class="registerModalHeading">
+    <h5>Be part of the community</h5>
+    <p>LeanDiary hopes you can be part of our family and be an inspiration to others trying to achieve their goals</p>
+  </div>
+  <div class="registerModalContent">
+    <form>
+      <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input type="text" class="form-control" id="registerEmail">
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input type="password" class="form-control" id="registerPassword">
+      </div>
+      <div class="form-group">
+        <label for="registerConfirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="registerConfirmPassword">
+      </div>
+  
+  
+      <button type="submit" class="btn ld_bg_primary mt-1 w-100">Join</button>
+      <a href="https://api.instagram.com/oauth/authorize/?client_id=46c42afd63d84b0ab851e1f736d21b4c&redirect_uri=http://localhost:4200/&response_type=token" class="btn btnInstaLogin">Login With Instagram</a>
+    </form>
+  </div>
+  <div class="text-center py-1">
+      <a class="btnLogin" (click)="changeModal('login')"><p>I am already registered. Take me to login</p></a>
+  </div>
 </div>
-<div class="registerModalContent">
-  <form>
-    <div class="form-group">
-      <label for="registerEmail">Email</label>
-      <input type="text" class="form-control" id="registerEmail">
-    </div>
-    <div class="form-group">
-      <label for="registerPassword">Password</label>
-      <input type="password" class="form-control" id="registerPassword">
-    </div>
-    <div class="form-group">
-      <label for="registerConfirmPassword">Confirm Password</label>
-      <input type="password" class="form-control" id="registerConfirmPassword">
-    </div>
 
-
-    <button type="submit" class="btn ld_bg_primary mt-1 w-100">Join</button>
-    <a href="https://api.instagram.com/oauth/authorize/?client_id=46c42afd63d84b0ab851e1f736d21b4c&redirect_uri=http://localhost:4200/&response_type=token" class="btn btnInstaLogin">Login With Instagram</a>
-  </form>
-</div>
-<div class="text-center py-1">
-  <a class="btnLogin" (click)="switchLoginDialog()"><p>I am already registered. Take me to login</p></a>
+<div *ngIf="this.modalType === 'login'" id="userLoginModal" class="noPaddingModal">
+  <div class="loginModalHeading">
+    <h5>Be part of the community</h5>
+    <p>LeanDiary hopes you can be part of our family and be an inspiration to others trying to achieve their goals</p>
+  </div>
+  <div class="loginModalContent">
+    <form>
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="text" class="form-control" id="loginEmail">
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" class="form-control" id="loginPassword">
+      </div>
+  
+  
+      <button type="submit" class="btn ld_bg_primary mt-1 w-100">Login</button>
+      <a href="https://api.instagram.com/oauth/authorize/?client_id=46c42afd63d84b0ab851e1f736d21b4c&redirect_uri=http://localhost:4200/&response_type=token" class="btn btnInstaLogin">Login With Instagram</a>
+    </form>
+  </div>
+  <div class="text-center py-1">
+    <a class="btnRegister" (click)="changeModal('register')"><p>I haven't register. Take me to Register</p></a>
+  </div>
 </div>

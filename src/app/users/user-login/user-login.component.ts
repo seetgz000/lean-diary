@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+
+import { UserService } from '../../user.service';
 
 import { UserRegisterComponent,UserRegisterComponentModal } from '../user-register/user-register.component';
-import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-login',
@@ -10,12 +12,9 @@ import { UserService } from '../../user.service';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(private userService: UserService) {}
-
-  openLoginDialog = new this.userService.openDialog( UserLoginComponentModal, "userLoginModal" );
+  constructor() {}
 
   ngOnInit() {
-    setTimeout(() => this.openLoginDialog(), 0);
   }
 }
 @Component({
@@ -23,4 +22,22 @@ export class UserLoginComponent implements OnInit {
   templateUrl: './user-login-modal.html',
   styleUrls: ['./user-login.component.css']
 })
-export class UserLoginComponentModal {}
+export class UserLoginComponentModal {
+
+  constructor(public dialog: MatDialog){}
+
+  switchRegisterDialog() {
+    this.dialog.closeAll();
+
+    const dialogRef = this.dialog.open(UserRegisterComponentModal, {
+      autoFocus: false,
+      id: 'userRegisterModal',
+      panelClass: 'noPaddingModal' 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });    
+  }
+
+}
