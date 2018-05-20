@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteBase    /ILogin/
+RewriteCond $1 !^(index\.php|images|files|css|js|fonts|robots\.txt)
+RewriteRule ^(.*)$ /ILogin/index.php/$1 [L]
