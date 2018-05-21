@@ -15,8 +15,7 @@ import { AppComponent } from './app.component';
 import { FoodComponent } from './foods/food/food.component';
 import { FoodSearchComponent,FoodSearchComponentModal } from './foods/food-search/food-search.component';
 import { UserComponent } from './users/user/user.component';
-import { UserRegisterComponent,UserRegisterComponentModal } from './users/user-register/user-register.component';
-import { UserLoginComponent, UserLoginComponentModal } from './users/user-login/user-login.component';
+import { UserLoginRegisterComponent,UserLoginRegisterComponentModal } from './users/user-login-register/user-login-register.component';
 
 import { HomeComponent } from './home/home.component';
 import { FoodDetailComponent } from './foods/food-detail/food-detail.component';
@@ -45,10 +44,8 @@ export class MaterialModule {}
     FoodSearchComponent,
     FoodSearchComponentModal,
     UserComponent,
-    UserRegisterComponent,
-    UserRegisterComponentModal,
-    UserLoginComponent,
-    UserLoginComponentModal,
+    UserLoginRegisterComponent,
+    UserLoginRegisterComponentModal,
     HomeComponent,
     FoodDetailComponent,
     UserDetailComponent,
@@ -56,8 +53,11 @@ export class MaterialModule {}
     UserProfileComponent
     
   ],
-  entryComponents: [FoodSearchComponent,
-  FoodSearchComponentModal,UserRegisterComponent, UserRegisterComponentModal, UserLoginComponent, UserLoginComponentModal],
+  entryComponents: [
+    FoodSearchComponent,
+    FoodSearchComponentModal,
+    UserLoginRegisterComponent,
+    UserLoginRegisterComponentModal],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

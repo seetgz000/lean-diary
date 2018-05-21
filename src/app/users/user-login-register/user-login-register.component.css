@@ -1,10 +1,12 @@
-.registerModalHeading {
+.registerModalHeading,
+.loginModalHeading {
   background-color: var(--ld_primary);
   color: #fff;
   padding: 10px 30px 10px 30px;
 }
 
-.registerModalContent {
+.registerModalContent,
+.loginModalContent {
   padding: 10px 15px;
 }
 
@@ -16,10 +18,12 @@
   cursor: pointer;
 }
 
-.btnLogin {
+.btnLogin,
+.btnRegister {
   color: #000;
   cursor: pointer;
 }
-.btnLogin:hover p{
+.btnLogin:hover p,
+.btnRegister:hover p{
   color:rgb(87, 87, 87);
 }

@@ -1,4 +1,8 @@
 import { Component, Input } from '@angular/core';
+import {MatDialog} from '@angular/material';
+
+import { FoodService } from '../../food.service';
+
 
 @Component({
   selector: 'app-food-gallery',
@@ -7,8 +11,8 @@ import { Component, Input } from '@angular/core';
 })
 export class FoodGalleryComponent {
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private foodService: FoodService) {}
+
 
   @Input() datasource;
-
 }
