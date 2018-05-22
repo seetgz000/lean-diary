@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { User } from '../user';
+
+import { slideLeftAnimation } from '../../animation';
+
+import { Food } from '../../foods/food';
+import { FoodService } from '../../food.service';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
+  animations: [slideLeftAnimation]
 })
 export class UserProfileComponent implements OnInit {
 
-  images;
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+  @HostBinding('style.width')  width = '100vw';
+  @HostBinding('style.zIndex')  zIndex = '1000';
+
   editProfile: boolean;
 
   user: User = {
@@ -24,30 +35,6 @@ export class UserProfileComponent implements OnInit {
   };
 
   constructor() {
-
-    this.images = [
-   	{"url":"../../assets/images/food-list/food1.png"},
-   	{"url":"../../assets/images/food-list/food2.png"},
-   	{"url":"../../assets/images/food-list/food3.png"},
-   	{"url":"../../assets/images/food-list/food4.png"},
-   	{"url":"../../assets/images/food-list/food5.png"},
-   	{"url":"../../assets/images/food-list/food6.png"},
-   	{"url":"../../assets/images/food-list/food7.png"},
-   	{"url":"../../assets/images/food-list/food8.png"},
-   	{"url":"../../assets/images/food-list/food9.png"},
-   	{"url":"../../assets/images/food-list/food10.jpg"},
-   	{"url":"../../assets/images/food-list/food11.jpg"},
-   	{"url":"../../assets/images/food-list/food12.jpeg"},
-   	{"url":"../../assets/images/food-list/food13.jpg"},
-   	{"url":"../../assets/images/food-list/food14.jpg"},
-   	{"url":"../../assets/images/food-list/food15.jpg"},
-   	{"url":"../../assets/images/food-list/food16.jpg"},
-   	{"url":"../../assets/images/food-list/food17.jpg"},
-   	{"url":"../../assets/images/food-list/food18.jpg"},
-   	{"url":"../../assets/images/food-list/food19.png"},
-   	{"url":"../../assets/images/food-list/food20.jpg"},
-    ];
-
       this.editProfile = false;
   }
 

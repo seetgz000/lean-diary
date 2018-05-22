@@ -11,6 +11,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 import { AppComponent } from './app.component';
 import { FoodComponent } from './foods/food/food.component';
 import { FoodSearchComponent,FoodSearchComponentModal } from './foods/food-search/food-search.component';
@@ -19,7 +22,6 @@ import { UserLoginRegisterComponent,UserLoginRegisterComponentModal } from './us
 
 import { HomeComponent } from './home/home.component';
 import { FoodDetailComponent } from './foods/food-detail/food-detail.component';
-import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 import { FoodService } from './food.service';
 import { UserService } from './user.service';
@@ -48,7 +50,6 @@ export class MaterialModule {}
     UserLoginRegisterComponentModal,
     HomeComponent,
     FoodDetailComponent,
-    UserDetailComponent,
     FoodGalleryComponent,
     UserProfileComponent
     
@@ -66,7 +67,14 @@ export class MaterialModule {}
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [FoodService, UserService],
   bootstrap: [AppComponent]

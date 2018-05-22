@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
+import { Food } from '../food';
 import { FoodService } from '../../food.service';
 
 
@@ -9,10 +10,18 @@ import { FoodService } from '../../food.service';
   templateUrl: './food-gallery.component.html',
   styleUrls: ['./food-gallery.component.css']
 })
-export class FoodGalleryComponent {
+export class FoodGalleryComponent implements OnInit {
+
+  foods: Food[];
 
   constructor(public dialog: MatDialog, private foodService: FoodService) {}
 
+  getFoods(): void {
+    this.foodService.getFoods()
+    .subscribe(foods => this.foods = foods);
+  }
 
-  @Input() datasource;
+  ngOnInit() {
+    this.getFoods();
+  }
 }
