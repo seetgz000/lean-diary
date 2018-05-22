@@ -1,46 +1,43 @@
 <div class="container">
-  <img src="{{food.url}}" class="img-fluid">
+  
+  <div class="foodImg_container">
+    <img src="{{food.url}}" class="img-fluid">
+  </div>
 
   <h3 class="food_title">{{food.name}}</h3>
 
-  <h4>{{food.meal}}</h4>
+  <div class="meal_container">
+    <h4>{{food.meal}}</h4>
+  </div>
 
-  <div *ngFor="let tag of food.tags">
+  <div class="food_tag_container" *ngFor="let tag of food.tags">
     <span class="food_tag">{{tag}}</span>
   </div>
 
-  <div class="row m-0">
-    <div  class="mr-1">
-      <h3 class="ld_text_primary">{{food.kcal}}</h3>
+  <div class="my-5">
+    <h4><span class="ld_text_primary">{{food.kcal}}</span><small>kcal</small></h4>
+  </div>
+
+  
+  <div class="label_container">
+    <div class="food_protein">
+      <span>{{food.protein}}g</span>
+    </div>      
+    <div class="food_carbs">
+      <span>{{food.carbs}}g</span>
     </div>
-    <div>
-      <p class="mb-0 mt-2">kcal</p>
-        <p>per meal</p>
+
+    <div class="food_fiber">
+      <span>{{food.fiber}}g</span>
+    </div>
+
+    <div class="food_fat">
+      <span>{{food.fat}}g</span>
     </div>
   </div>
 
   <div class="food_ingredients">
-    <p>{{food.ingredients}}</p>
+    <p>Ingredients: {{food.ingredients}}</p>
   </div>
-  
-  <div class="food_protein">
-    <span>{{food.protein}}g</span>
-  </div>
-  <div class="food_carbs">
-    <span>{{food.carbs}}g</span>
-  </div>
-  <div class="food_fiber">
-    <span>{{food.fiber}}g</span>
-  </div>
-  <div class="food_fat">
-    <span>{{food.fat}}g</span>
-  </div>
+
 </div>
-
-<div class="masonry_item"  *ngFor="let relatedFood of foods" >
-  <div *ngIf ="relatedFood.tags[0] == this.food.tags[0]">
-    <a routerLink="/detail/{{food.id}}"><img src="{{relatedFood.url}}" class="masonry_img"></a>
-  </div>
-</div>
-
-

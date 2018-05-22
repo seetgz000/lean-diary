@@ -1,5 +1,33 @@
+.foodImg_container {
+    text-align: center;
+}
+
+.meal_container {
+    float: right;
+}
+
+.food_tag_container {
+    display: inline-block;
+    margin-right: 1%;
+}
 .food_tag {
     background-color: #000;
     color: #fff;
     cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 34px;
+}
+
+.label_container {
+    text-align: center;
+}
+
+.food_protein,
+.food_carbs,
+.food_fiber,
+.food_fat {
+    border: 1px solid #000;
+    display: inline-block;
+    margin: auto 10px;
+    padding: 10px 20px;
 }
