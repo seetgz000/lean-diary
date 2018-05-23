@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 
+import { switchModalAnimation } from '../../animation';
+
 import { UserService } from '../../user.service';
 
 
@@ -8,7 +10,8 @@ import { UserService } from '../../user.service';
 @Component({
   selector: 'app-user-login-register',
   templateUrl: './user-login-register.component.html',
-  styleUrls: ['./user-login-register.component.css']
+  styleUrls: ['./user-login-register.component.css'],
+  animations: [switchModalAnimation]
 })
 export class UserLoginRegisterComponent implements OnInit {
 
@@ -29,27 +32,26 @@ export class UserLoginRegisterComponent implements OnInit {
 
 
   ngOnInit() {
-    setTimeout(() => this.openRegisterDialog(), 0);
+    setTimeout(() => this.openRegisterDialog(), 500);
   }
 
 }
 @Component({
   selector: 'app-user-login-register-modal',
   templateUrl: './user-login-register-modal.html',
-  styleUrls: ['./user-login-register.component.css']
+  styleUrls: ['./user-login-register.component.css'],
+  animations: [switchModalAnimation]
 })
 export class UserLoginRegisterComponentModal {
 
   constructor(){}
 
-  modalType: string;
+  state = 'register'
 
-  changeModal(ModalType: string){
-    
-    this.modalType = ModalType;
+  toggleLoginRegisterState() {
+    this.state = this.state === 'login' ? 'register' : 'login';
   }
 
   ngOnInit() {
-    this.modalType = "register";
   }
 }

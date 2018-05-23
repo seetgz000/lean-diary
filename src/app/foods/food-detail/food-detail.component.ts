@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
+import { zoomInAnimation } from '../../animation';
 
 import { Food } from '../../foods/food';
 import { FoodService } from '../../food.service';
@@ -8,7 +10,8 @@ import { FoodService } from '../../food.service';
 @Component({
   selector: 'app-food-detail',
   templateUrl: './food-detail.component.html',
-  styleUrls: ['./food-detail.component.css']
+  styleUrls: ['./food-detail.component.css'],
+  animations: [zoomInAnimation]
 })
 export class FoodDetailComponent implements OnInit {
   food: Food;
@@ -18,6 +21,11 @@ export class FoodDetailComponent implements OnInit {
     private foodService: FoodService,
     private location: Location
   ) { }
+
+  @HostBinding('@zoomIn') zoomIn = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+  @HostBinding('style.width')  width = '100%';
 
   ngOnInit() {
     this.getFood();
@@ -33,6 +41,10 @@ export class FoodDetailComponent implements OnInit {
   getFoods(): void {
     this.foodService.getFoods()
     .subscribe(foods => this.foods = foods);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

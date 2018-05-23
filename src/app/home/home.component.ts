@@ -13,10 +13,9 @@ import { slideRightAnimation } from '../animation';
 export class HomeComponent implements OnInit {
    constructor(public dialog: MatDialog){}
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('@slideRight') slideRight = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
-  @HostBinding('style.width')  width = '100vw';
 
    openSearchModal() {
      const dialogRef = this.dialog.open(FoodSearchComponentModal, {

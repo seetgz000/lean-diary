@@ -1,5 +1,10 @@
 <div class="container">
   
+  <div class="btn_back_container">
+    <button class="btn_back" (click)="goBack()">Back</button>
+  </div>
+
+
   <div class="foodImg_container">
     <img src="{{food.url}}" class="img-fluid">
   </div>
@@ -14,7 +19,7 @@
     <span class="food_tag">{{tag}}</span>
   </div>
 
-  <div class="my-5">
+  <div class="my-3">
     <h4><span class="ld_text_primary">{{food.kcal}}</span><small>kcal</small></h4>
   </div>
 
@@ -35,9 +40,16 @@
       <span>{{food.fat}}g</span>
     </div>
   </div>
+  <div class="label_name_container">
+    <span>Protein</span>
+    <span>Carbs</span>
+    <span>Fiber</span>
+    <span>Fat</span>
+  </div>
 
   <div class="food_ingredients">
-    <p>Ingredients: {{food.ingredients}}</p>
+    <h4>Ingredients:</h4>
+    <p>{{food.ingredients}}</p>
   </div>
 
 </div>

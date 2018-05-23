@@ -14,11 +14,9 @@ import { FoodService } from '../../food.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('@slideLeft') slideLeft = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
-  @HostBinding('style.width')  width = '100vw';
-  @HostBinding('style.zIndex')  zIndex = '1000';
 
   editProfile: boolean;
 
