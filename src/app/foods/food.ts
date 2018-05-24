@@ -3,7 +3,7 @@ export class Food {
     name: string;
     ingredients: string[];
     meal: string;
-    tag: string[];
+    tags: string[];
     kcal: number;
     protein: number;
     carbs: number;

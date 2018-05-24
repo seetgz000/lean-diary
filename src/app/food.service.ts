@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Subject }    from 'rxjs/Subject';
 
-import { Food } from './foods/food'
+import { Food } from './foods/food';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
