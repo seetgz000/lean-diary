@@ -50,7 +50,16 @@ body,html {
   padding: 0;
 }
 
-#mat-dialog-0,
-#mat-dialog-2 {
+#loginRegisterModal {
     overflow: hidden; /* Remove Register Login Transition Srollbar */
+}
+@media (max-height: 550px) {
+    #loginRegisterModal {
+        overflow: auto; /* Remove Register Login Transition Srollbar */
+        max-height: 90vh;
+    }
+}
+
+#foodSearchModal {
+    max-height: 90vh;
 }

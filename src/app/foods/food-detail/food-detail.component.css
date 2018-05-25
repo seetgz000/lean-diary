@@ -1,16 +1,17 @@
 .btn_back_container {
-    float: left;
+    float: right;
 }
 
 .btn_back {
-    margin-top: 20px;
+    font-size: 1.5rem;
     font-family: Arial;
-    background-color: var(--ld_primary);
+    background-color: #d43838;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 0 12px;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 5%;
 }
 
 .foodImg_container {
@@ -86,7 +87,17 @@
     border-top: 5px solid #636363
 }
 
-.food_ingredients {
+.food_subtitle {
     text-align: center;
     padding-top: 5%;
+}
+
+.related_food{
+    text-align: center;
+}
+.related_food img{
+    height: 20vw;
+    width: 100%;
+    object-fit: cover;
+    margin: 5% auto;
 }

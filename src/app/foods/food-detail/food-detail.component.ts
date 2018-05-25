@@ -15,7 +15,7 @@ import { FoodService } from '../../food.service';
 })
 export class FoodDetailComponent implements OnInit {
   food: Food;
-  // foods: Food[];
+  foods: Food[];
   constructor(
     private route: ActivatedRoute,
     private foodService: FoodService,
@@ -29,7 +29,7 @@ export class FoodDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getFood();
-    // this.getFoods();
+    this.getFoods();
     console.log(name);
   }
 
@@ -40,10 +40,10 @@ export class FoodDetailComponent implements OnInit {
         food => this.food = food);
   }
 
-  // getFoods(): void {
-  //   this.foodService.getFoods()
-  //   .subscribe(foods => this.foods = foods);
-  // }
+  getFoods(): void {
+    this.foodService.getFoods()
+    .subscribe(foods => this.foods = foods);
+  }
 
   goBack(): void {
     this.location.back();

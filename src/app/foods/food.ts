@@ -1,7 +1,7 @@
 export class Food {
     id: number;
     name: string;
-    ingredients: string[];
+    subtitle: string[];
     meal: string;
     tags: string[];
     kcal: number;
